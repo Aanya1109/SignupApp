@@ -87,9 +87,7 @@ npm install
    mongodb+srv://signupuser:<password>@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority
    ```
 3. Replace `<password>` with your real password (no `<` `>` symbols) and add the database name `signupapp` before the `?`:
-   ```
-   mongodb+srv://signupuser:MyPass123@cluster0.abcde.mongodb.net/signupapp?retryWrites=true&w=majority
-   ```
+   
 
 **Using local MongoDB instead:** install MongoDB Community Server, make sure the service is running, and use:
 ```
