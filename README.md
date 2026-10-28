@@ -105,7 +105,7 @@ notepad .env
 Set your values:
 
 ```
-MONGODB_URI=mongodb+srv://signupuser:MyPass123@cluster0.abcde.mongodb.net/signupapp?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://signupuser:<password>@cluster0.abcde.mongodb.net/signupapp?retryWrites=true&w=majority
 PORT=5000
 CLIENT_ORIGIN=http://localhost:5173
 ```
