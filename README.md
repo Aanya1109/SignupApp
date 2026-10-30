@@ -172,30 +172,8 @@ All responses are JSON.
 
 **GET `/api/health`** – shows whether the database is connected.
 
-## 13. Common errors and fixes
+Project Demo
 
-| Problem | Fix |
-|---|---|
-| `MONGODB_URI is missing` | You have no `server\.env`, or it still contains the placeholder. Redo section 8. |
-| `Could not connect to MongoDB` / timeout | Your IP is not in Atlas **Network Access**. Add it (section 6, step 4). |
-| `bad auth: Authentication failed` | Wrong database username or password in the connection string. Check for leftover `<` `>`. |
-| Password with `@`, `#`, `/` breaks the string | Use a simple password for the database user, or URL-encode the symbols. |
-| "Cannot reach the server" in the browser | The server is not running, or the port in `VITE_API_URL` is wrong. |
-| CORS error in the browser console | `CLIENT_ORIGIN` in `server\.env` must exactly match the address shown by Vite (`http://localhost:5173`). Restart the server. |
-| `EADDRINUSE: port 5000` | Another program uses the port. Change `PORT` in `.env` and `VITE_API_URL` to match. |
-| `npm` is not recognized | Install Node.js and reopen PowerShell. |
-| Script execution is disabled (PowerShell) | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, or use Command Prompt. |
+Watch the project demonstration below:
 
-## 14. Security limitations and future improvements
-
-What is done properly: passwords are hashed with bcrypt, hashes are never sent to the browser, the server validates all input, duplicate emails are rejected (including a unique database index), error messages do not leak database details, secrets live in `.env`, and basic protections (helmet, CORS limit, rate limiting, body size limit) are enabled.
-
-What this project does **not** do:
-
-- **No real login session.** After a correct password the server replies "success", but it does not create a session or token. The welcome screen is kept only in React memory, so a refresh logs you out. A real application would use server-side sessions with `Secure`, `HttpOnly`, `SameSite` cookies (or signed tokens), plus logout on the server.
-- No HTTPS in development (use HTTPS in production).
-- No email verification or password reset.
-- Rate limiting is per IP and kept in memory.
-- Simple email format check (it does not prove the mailbox exists).
-
-Possible improvements: sessions with `express-session` + `connect-mongo`, email verification, password reset, automated tests, password-strength meter.
+https://github.com/user-attachments/assets/2c34f27d-19ef-49e6-a18f-6e7ba03d332b
